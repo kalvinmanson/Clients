@@ -7,8 +7,16 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import '~datatables.net-bs4/css/dataTables.bootstrap4.min.css';
 
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+tr {
+width: 100%;
+display: inline-table;
+table-layout: fixed;
 }

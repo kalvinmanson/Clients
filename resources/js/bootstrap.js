@@ -10,8 +10,9 @@ window.Popper = require('popper.js').default;
 
 try {
     window.$ = window.jQuery = require('jquery');
-
     require('bootstrap');
+    require( 'datatables.net-bs4' )();
+    require( 'datatables.net-responsive-bs4' )();
 } catch (e) {}
 
 /**
@@ -56,4 +57,10 @@ if (token) {
 // });
 $(function() {
   $('.modalOpened').modal('show');
+
+  $('#dtTable').DataTable({
+    scrollY:        '450px',
+    scrollCollapse: true,
+    paging:         false
+  });
 });
