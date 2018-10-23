@@ -73,8 +73,11 @@ class SellerController extends Controller
   public function destroy($id)
   {
     $seller = Seller::findOrFail($id);
+    foreach($seller->clients as $client) {
+      $client->delete();
+    }
     $seller->delete();
-    flash('Seller removed successful.')->error();
+    flash('Seller and children removed successful.')->error();
     return redirect()->route('sellers.index');
   }
 }
